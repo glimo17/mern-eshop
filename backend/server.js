@@ -4,9 +4,12 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import seedRouter from "./routes/seedRoutes.js";
 import productRouter from "./routes/productRoutes.js";
+import customerRoutes from "./routes/customerRoutes.js";
 import userRouter from "./routes/userRoutes.js";
+import accountsRouter from "./routes/accountsRouter.js";
 import orderRouter from "./routes/orderRoutes.js";
 import uploadRouter from "./routes/uploadRoutes.js";
+import movimientosRouter from "./routes/movimientosRouter.js";
 
 dotenv.config();
 
@@ -35,7 +38,10 @@ app.get("/api/keys/google", (req, res) => {
 app.use("/api/upload", uploadRouter);
 app.use("/api/seed", seedRouter);
 app.use("/api/products", productRouter);
+app.use("/api/customers", customerRoutes);
+app.use("/api/accounts", accountsRouter);
 app.use("/api/users", userRouter);
+app.use("/api/movimientos", movimientosRouter);
 app.use("/api/orders", orderRouter);
 
 app.use((err, req, res, next) => {

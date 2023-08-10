@@ -32,7 +32,13 @@ import ProductListScreen from "./screens/ProductListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
 import OrderListScreen from "./screens/OrderListScreen";
 import UserListScreen from "./screens/UserListScreen";
+import CustomerListScreen from "./screens/customers/CustomerListScreen";
 import UserEditScreen from "./screens/UserEditScreen";
+import CustomerEditScreen from "./screens/customers/CustomerEditScreen";
+import AccoutsListScreen from "./screens/Accounts/AccoutsListScreen";
+import CustomerAddScreen from "./screens/customers/CustomerAddScreen";
+import AccoutAddScreen from "./screens/Accounts/AccoutAddScreen";
+import AccountDetailScreen from "./screens/Accounts/AccountDetailScreen";
 import MapScreen from "./screens/MapScreen";
 
 function App() {
@@ -124,7 +130,7 @@ function App() {
                   )}
                   {userInfo && userInfo.isAdmin && (
                     <NavDropdown title="Admin" id="admin-nav-dropdown">
-                      <LinkContainer to="/admin/dashboard">
+                      {/* <LinkContainer to="/admin/dashboard">
                         <NavDropdown.Item>Dashboard</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/admin/products">
@@ -135,6 +141,15 @@ function App() {
                       </LinkContainer>
                       <LinkContainer to="/admin/users">
                         <NavDropdown.Item>Users</NavDropdown.Item>
+                      </LinkContainer> */}
+                      <LinkContainer to="/admin/accounts">
+                        <NavDropdown.Item>Cobros</NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to="/admin/accounts">
+                        <NavDropdown.Item>Creditos</NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to="/admin/customers">
+                        <NavDropdown.Item>Clientes</NavDropdown.Item>
                       </LinkContainer>
                     </NavDropdown>
                   )}
@@ -231,6 +246,54 @@ function App() {
                 element={
                   <AdminRoute>
                     <OrderListScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/accounts"
+                element={
+                  <AdminRoute>
+                    <AccoutsListScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/accounts/detail/:id"
+                element={
+                  <AdminRoute>
+                    <AccountDetailScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/accounts/add"
+                element={
+                  <AdminRoute>
+                    <AccoutAddScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/customers"
+                element={
+                  <AdminRoute>
+                    <CustomerListScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/customerAdd/"
+                element={
+                  <AdminRoute>
+                    <CustomerAddScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/customer/:id"
+                element={
+                  <AdminRoute>
+                    <CustomerEditScreen />
                   </AdminRoute>
                 }
               ></Route>
