@@ -170,7 +170,7 @@ function App() {
               <strong>Categories</strong>
             </Nav.Item>
 
-            {categories.map((category) => (
+            {/* {categories.map((category) => (
               <Nav.Item key={category}>
                 <LinkContainer
                   to={`/search?category=${category}`}
@@ -179,7 +179,7 @@ function App() {
                   <Nav.Link>{category}</Nav.Link>
                 </LinkContainer>
               </Nav.Item>
-            ))}
+            ))} */}
           </Nav>
         </div>
         <main>
