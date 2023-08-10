@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "proxy": "http://localhost:5000",
+  "proxy": "https://mern-eshop-kybc12hyk-glimo17.vercel.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
