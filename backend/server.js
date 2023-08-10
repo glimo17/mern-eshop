@@ -14,7 +14,7 @@ import movimientosRouter from "./routes/movimientosRouter.js";
 dotenv.config();
 
 mongoose
-  .connect("mongodb://127.0.0.1/eShop")
+  .connect("mongodb+srv://glimo17:123abc@cluster0.ocuxrsk.mongodb.net/eshop")
   .then(() => {
     console.log("connected to db");
   })
